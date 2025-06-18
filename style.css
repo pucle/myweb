@@ -1,0 +1,90 @@
+body {
+  background: repeating-linear-gradient(
+    45deg,
+    #ff00ff,
+    #ff00ff 20px,
+    #00ffff 20px,
+    #00ffff 40px
+  );
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive;
+  color: #932222;
+}
+
+#egg-container {
+  margin-top: 80px;
+}
+
+#egg {
+  width: 800px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.shake {
+  animation: shake 0.2s;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+#congrats {
+  display: none;
+  width: 800px;
+  margin-top: 30px;
+  border: 5px dashed yellow;
+  background-color: #ff69b4;
+}
+
+#flying-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: none;
+}
+
+.float {
+  position: absolute;
+  width: 250px;
+  opacity: 1;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+
+
+@keyframes float-up {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes float-down {
+  0% {
+    transform: translateY(-200px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 1;
+  }
+}
+
